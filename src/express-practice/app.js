@@ -4,8 +4,10 @@ import connectDB from "./config/mongodb.js";
 import router from "./router/index.js";
 import upload from "./middleware/multer.js";
 import cors from "cors";
+import { connectRedis } from "./config/redis.js";
 
 connectDB();
+connectRedis();
 
 const app = express();
 

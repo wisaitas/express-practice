@@ -13,9 +13,19 @@ services:
       - mongodb_data:/data/db
     networks:
       - express-practice-network
+  redis:
+    image: redis:8.2.0-alpine
+    container_name: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - redis_data:/data
+    networks:
+      - express-practice-network
 
 volumes:
   mongodb_data:
+  redis_data:
 
 networks:
   express-practice-network:
